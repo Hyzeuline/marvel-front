@@ -44,9 +44,9 @@ const Comics = () => {
   }, [comicTitle, page]);
 
   return isLoading ? (
-    <p>Chargement ...</p>
+    <p className="loading">Loading ⏳</p>
   ) : (
-    <>
+    <div className="container">
       <div className="input-search">
         <input
           type="search"
@@ -88,7 +88,7 @@ const Comics = () => {
           );
         })}
       </main>
-    </>
+    </div>
   );
 };
 

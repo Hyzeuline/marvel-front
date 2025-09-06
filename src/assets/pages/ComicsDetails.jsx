@@ -29,7 +29,7 @@ const ComicsDetails = () => {
   }, [comicId]);
 
   return isLoading ? (
-    <p>Chargement ...</p>
+    <p className="loading">Loading ⏳</p>
   ) : (
     <main className="container comicsDetails">
       <div className="cardDetails">

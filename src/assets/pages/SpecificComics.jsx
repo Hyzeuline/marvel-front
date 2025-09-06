@@ -52,7 +52,7 @@ const SpecificComics = () => {
   }, [characterId]);
 
   return isLoading ? (
-    <p>Chargement ...</p>
+    <p className="loading">Loading ⏳</p>
   ) : (
     <main className="container specificComics">
       {data.comics.map((element, index) => {

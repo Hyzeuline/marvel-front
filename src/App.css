@@ -15,8 +15,37 @@ h2 {
 
 button {
   font-family: "Marvel";
+  font-size: 15px;
 }
 
+.container {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.noexist,
+.loading {
+  margin-top: 60px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+.pagination {
+  gap: 30px;
+}
+
+.pagination > span {
+  color: white;
+  font-size: 18px;
+}
+
+.pagination button {
+  border-radius: 50px;
+  color: white;
+  background-color: black;
+}
 /* ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
@@ -24,33 +53,153 @@ button {
 ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------ */
-.container {
-  width: 1024px;
-  margin: 0 auto;
-  padding: 30px;
-}
 
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 150px;
 }
 
 .menu {
   display: flex;
   gap: 300px;
   padding: 30px;
+  gap: 100px;
 }
 
 .menu button {
   cursor: pointer;
+  border-radius: 5px;
+  margin-right: 20px;
+  height: 40px;
+  width: 100px;
+  background-color: #000000;
+  color: white;
+}
+
+.menu button:hover {
+  background-color: yellow;
+  color: #050505;
 }
 
 header > img {
   height: 50px;
   width: 130px;
 }
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- SIGNUP-----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+.formulaire-signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 580px 207px 560px;
+  width: 272px;
+  height: 423px;
+  background-color: rgb(202, 202, 194);
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.formulaire-signup h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+form > p {
+  font-size: 14px;
+  text-align: center;
+  color: #040404;
+  margin-bottom: 20px;
+}
+
+form input {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  height: 35px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.lien-login {
+  color: #7d0505;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.signup-form {
+  background-color: #000000;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- LOGIN-----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+.formulaire-login h1 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.formulaire-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60px 580px 207px 560px;
+  width: 272px;
+  height: 350px;
+  background-color: rgb(202, 202, 194);
+  border-radius: 5px;
+}
+
+.login-form {
+  background-color: #050505;
+  height: 45px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.lien-signup {
+  color: #7d0505;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 /* ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------
@@ -71,7 +220,7 @@ header > img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 250px;
+  width: 220px;
   height: 380px;
   border: solid 2px rgb(190, 19, 19);
   border-radius: 20px;
@@ -122,26 +271,45 @@ header > img {
 ------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------ */
 
+.comicsDetails,
+.characterDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .descriptionFull {
   text-align: center;
   font-size: 10px;
-  line-height: 15px;
+  line-height: 25px;
   font-family: "montserrat";
-  color: rgb(168, 164, 164);
+  font-size: 18px;
+  color: rgb(255, 248, 248);
 }
 
 .cardDetails {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 250px;
-  height: 400px;
+  width: 600px;
+  height: 450px;
   border: solid 2px rgb(215, 245, 24);
   border-radius: 20px;
-  padding: 10px;
+  padding: 40px;
   gap: 10px;
   background-color: rgb(129, 124, 124);
+}
+
+.text {
+  padding: 20px;
+}
+.text h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #8a0707;
+  font-family: "Montserrat";
+  font-weight: bold;
 }
 
 .input-search,

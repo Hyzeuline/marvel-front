@@ -27,7 +27,7 @@ const CharacterDetails = () => {
   }, [characterId]);
 
   return isLoading ? (
-    <p>Chargement ...</p>
+    <p className="loading">Loading ⏳</p>
   ) : (
     <main className="container characterDetails">
       <div className="cardDetails">
@@ -35,8 +35,10 @@ const CharacterDetails = () => {
           src={`${data.thumbnail.path}/portrait_xlarge.${data.thumbnail.extension}`}
           alt={`photo de ${data.name}`}
         />
-        <h2>{data.name}</h2>
-        <div className="descriptionFull">{data.description}</div>
+        <div className="text">
+          <h2>{data.name}</h2>
+          <div className="descriptionFull">{data.description}</div>
+        </div>
       </div>
     </main>
   );

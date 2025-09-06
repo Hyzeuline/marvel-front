@@ -6,7 +6,7 @@ const Header = () => {
     <header className="container">
       <img src={logo} alt="logo-marvel" />
       <section className="menu">
-        <div>
+        <div className="button-comics/characters">
           <Link to="/characters">
             <button>All characters</button>
           </Link>
@@ -15,8 +15,16 @@ const Header = () => {
           </Link>
         </div>
         <Link to="/favorites">
-          <button>Favorites</button>
+          <button className="favorites">Favorites ❤️ </button>
         </Link>
+        <div className="button-signup/login">
+          <Link to="/signup">
+            <button>Sign up</button>
+          </Link>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+        </div>
       </section>
     </header>
   );

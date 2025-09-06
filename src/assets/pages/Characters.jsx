@@ -44,9 +44,9 @@ const Characters = () => {
   }, [characterName, page]);
 
   return isLoading ? (
-    <p>Chargement ...</p>
+    <p className="loading">Loading ⏳</p>
   ) : (
-    <>
+    <div className="container">
       <div className="input-search">
         <input
           type="search"
@@ -61,10 +61,10 @@ const Characters = () => {
           onClick={() => setPage(prev => Math.max(prev - 1, 1))}
           disabled={page === 1}
         >
-          ⬅️ Previous
+          ←
         </button>
         <span>Page {page}</span>
-        <button onClick={() => setPage(prev => prev + 1)}>Next ➡️</button>
+        <button onClick={() => setPage(prev => prev + 1)}>→</button>
       </div>
       <main className="container characters">
         {data.results.map((element, index) => {
@@ -91,8 +91,21 @@ const Characters = () => {
           );
         })}
       </main>
-    </>
+    </div>
   );
 };
 
 export default Characters;
+
+// const [log, setLog] = useState();
+
+//     création de chaque cookie pour chaque value
+//     Cookies.set("characterId", {data.results.map((element)=>{
+// return element._id}), { expires: 14 });
+//     récupération du cookies et mise à jour de la valeur log
+//     setLog(Cookies.get("characterId"));
+
+// onClick={()=>{
+//                      Cookies.set("characterId", { element._id}), { expires: 14 });
+//                      setLog(Cookies.get("characterId"));
+//                 }}
