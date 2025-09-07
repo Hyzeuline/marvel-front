@@ -33,7 +33,7 @@ function App() {
             path="/signup"
             element={<Signup log={log} setLog={setLog} />}
           />
-          <Route path="/login" element={<Login setLog={setLog} />} />
+          <Route path="/login" element={<Login log={log} />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route
             path="/character/:characterId"

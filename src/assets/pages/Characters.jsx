@@ -14,11 +14,6 @@ const Characters = ({ log }) => {
   };
 
   const handleAddFavorite = async element => {
-    if (!log || log === "") {
-      // vérifier si je suis connecter pour pouvoir ajouter des favoris
-      alert("You need to be connected for add a favorite !");
-      return;
-    }
     try {
       const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/favorite`,
@@ -32,7 +27,7 @@ const Characters = ({ log }) => {
           },
         },
         {
-          withCredentials: true, // pour envoyer le cookie
+          withCredentials: true, // envoie le cookie HTTP-only
         }
       );
 
@@ -135,16 +130,3 @@ const Characters = ({ log }) => {
 };
 
 export default Characters;
-
-// const [log, setLog] = useState();
-
-//     création de chaque cookie pour chaque value
-//     Cookies.set("characterId", {data.results.map((element)=>{
-// return element._id}), { expires: 14 });
-//     récupération du cookies et mise à jour de la valeur log
-//     setLog(Cookies.get("characterId"));
-
-// onClick={()=>{
-//                      Cookies.set("characterId", { element._id}), { expires: 14 });
-//                      setLog(Cookies.get("characterId"));
-//                 }}
