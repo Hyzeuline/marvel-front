@@ -26,7 +26,7 @@ const Signup = ({ setLog }) => {
 
   let url = import.meta.env.VITE_API_URL
     ? `${import.meta.env.VITE_API_URL}/user/signup`
-    : "https://site--marvel-back--zvc5szvjvznr.code.run//user/signup";
+    : "https://site--marvel-back--zvc5szvjvznr.code.run/user/signup";
 
   const handleSubmit = async event => {
     event.preventDefault(); // ça permet à la page de ne pas être rafraîchit

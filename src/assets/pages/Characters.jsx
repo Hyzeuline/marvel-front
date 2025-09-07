@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const Characters = () => {
+const Characters = ({ log }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [characterName, setCharacterName] = useState("");
@@ -11,6 +11,40 @@ const Characters = () => {
   const handleCharacterName = event => {
     setCharacterName(event.target.value);
     setPage(1);
+  };
+
+  const handleAddFavorite = async element => {
+    if (!log) {
+      // vérifier si je suis connecter pour pouvoir ajouter des favoris
+      alert("You need to be connected for add a favorite !");
+      return;
+    }
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/favorite`,
+        {
+          title: element.name,
+          description: element.description,
+          itemType: "character",
+          itemId: element._id,
+          image: {
+            url: `${element.thumbnail.path}/portrait_xlarge.${element.thumbnail.extension}`,
+          },
+        },
+        {
+          withCredentials: true, // pour envoyer le cookie
+        }
+      );
+
+      console.log("Favori ajouté :", response.data);
+      alert(`${element.name} a été ajouté à vos favoris ❤️`);
+    } catch (error) {
+      console.error(error.response?.data || error.message);
+      alert(
+        error.response?.data?.message ||
+          "Impossible d'ajouter ce favori. Vérifiez que vous êtes connecté."
+      );
+    }
   };
 
   useEffect(() => {
@@ -71,7 +105,12 @@ const Characters = () => {
           return (
             <div key={index} className="card">
               <div className="favorite">
-                <div>coeur</div>
+                <div
+                  onClick={() => handleAddFavorite(element)}
+                  className={`heart-button ${log ? "active" : "disabled"}`}
+                >
+                  ♥️
+                </div>
               </div>
               <img
                 src={`${element.thumbnail.path}/portrait_xlarge.${element.thumbnail.extension}`}

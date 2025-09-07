@@ -1,7 +1,8 @@
 import logo from "../assets/img/marvel-logo.png";
 import { Link } from "react-router-dom";
+import Cookies from "js-cookie";
 
-const Header = () => {
+const Header = ({ log, setLog }) => {
   return (
     <header className="container">
       <img src={logo} alt="logo-marvel" />
@@ -17,14 +18,26 @@ const Header = () => {
         <Link to="/favorites">
           <button className="favorites">Favorites ❤️ </button>
         </Link>
-        <div className="button-signup/login">
-          <Link to="/signup">
-            <button>Sign up</button>
-          </Link>
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-        </div>
+        {log ? (
+          <button
+            className="disconnect"
+            onClick={() => {
+              Cookies.remove("token");
+              setLog(null);
+            }}
+          >
+            Disconnect
+          </button>
+        ) : (
+          <div className="button-signup/login">
+            <Link to="/signup">
+              <button>Sign up</button>
+            </Link>
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          </div>
+        )}
       </section>
     </header>
   );
