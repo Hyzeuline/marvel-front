@@ -14,7 +14,7 @@ const Characters = ({ log }) => {
   };
 
   const handleAddFavorite = async element => {
-    if (!log) {
+    if (!log || log === "") {
       // vérifier si je suis connecter pour pouvoir ajouter des favoris
       alert("You need to be connected for add a favorite !");
       return;
